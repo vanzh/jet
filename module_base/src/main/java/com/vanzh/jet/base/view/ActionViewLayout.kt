@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
 import com.vanzh.base.R
+import com.vanzh.jet.base.net.NetHelper
 import kotlinx.android.synthetic.main.layout_action_view.view.*
 
 /**
@@ -42,7 +43,6 @@ class ActionViewLayout : FrameLayout {
                 showBack = getBoolean(R.styleable.ActionViewLayout_showBack, true)
                 recycle()
             }
-
         }
     }
 

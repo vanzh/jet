@@ -25,6 +25,9 @@ abstract class BaseActivity : AppCompatActivity() {
 
         if (getLayoutId() != 0) createContent()
 
+        bindViewModel()
+        init()
+        initView()
     }
 
 
@@ -42,14 +45,14 @@ abstract class BaseActivity : AppCompatActivity() {
     open fun createActionBar() {
         svActionBar.layoutResource = R.layout.toolbar
         toolBar = svActionBar.inflate() as ActionViewLayout
-        toolBar.toolbarBack.visibility(!hideToolBarBack)
+        toolBar.toolbarBack.visibility(!showToolBarBack)
         toolBar.toolbarBack.setOnClickListener {
             finish()
         }
         toolBar.toolbarTitle.text = this.title
     }
 
-    var hideToolBarBack: Boolean = true
+    var showToolBarBack: Boolean = true
         set(value) {
             field = value
             toolBar?.toolbarBack?.visibility(value)
@@ -59,4 +62,10 @@ abstract class BaseActivity : AppCompatActivity() {
         svContent.layoutResource = getLayoutId()
         svContent.inflate()
     }
+
+    abstract fun bindViewModel()
+
+    abstract fun init()
+
+    open fun initView() {}
 }
