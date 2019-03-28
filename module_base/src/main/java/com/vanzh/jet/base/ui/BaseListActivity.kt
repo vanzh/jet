@@ -2,7 +2,6 @@ package com.vanzh.jet.base.ui
 
 import android.arch.lifecycle.ViewModelProviders
 import android.view.View
-import com.vanzh.base.BaseActivity
 import com.vanzh.base.R
 import com.vanzh.jet.base.adapter.BaseItem
 import com.vanzh.jet.base.adapter.BasePagedAdapter

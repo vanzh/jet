@@ -1,7 +1,8 @@
 package com.vanzh.jet
 
 import android.content.Intent
-import com.vanzh.base.BaseActivity
+import com.vanzh.jet.base.ui.BaseActivity
+
 import com.vanzh.jet.ui.ArticleListActivity
 import com.vanzh.jet.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*

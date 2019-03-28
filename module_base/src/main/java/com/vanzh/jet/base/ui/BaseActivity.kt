@@ -1,10 +1,11 @@
-package com.vanzh.base
+package com.vanzh.jet.base.ui
 
 import android.os.Bundle
 import android.support.annotation.LayoutRes
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.LinearLayout
+import com.vanzh.base.R
 import com.vanzh.jet.base.view.ActionViewLayout
 import com.vanzh.jet.base.view.visibility
 import kotlinx.android.synthetic.main.activity_base.*
