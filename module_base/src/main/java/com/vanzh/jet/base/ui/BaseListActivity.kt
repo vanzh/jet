@@ -59,13 +59,14 @@ abstract class BaseListActivity<T : BaseItem, VM : BaseListViewModel<T>> : BaseA
 
         baseRecyclerView.init(mAdapter)
         baseRefreshLayout.setOnRefreshListener {
-            viewModel.init()
+            viewModel.invalidate()
         }
     }
 
-
+    abstract fun createViewModel():BaseListViewModel<T>
     abstract fun createAdapter(): BasePagedAdapter<T>
     open fun itemClicked(view: View, item: T, position: Int) {}
+
 
     fun refreshFinished(result: RefreshResult) {
         baseRefreshLayout?.isRefreshing = false

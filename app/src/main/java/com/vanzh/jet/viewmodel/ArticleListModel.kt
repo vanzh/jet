@@ -1,6 +1,5 @@
 package com.vanzh.jet.viewmodel
 
-import android.arch.paging.PageKeyedDataSource
 import com.vanzh.jet.base.viewmodel.BaseListViewModel
 import com.vanzh.jet.model.Article
 import com.vanzh.jet.net.Api
@@ -24,4 +23,8 @@ class ArticleListModel : BaseListViewModel<Article>() {
     }
 
 
+    fun collect(item: Article, position: Int) {
+        item.collect = !item.collect
+        notifyItem(position, item)
+    }
 }
