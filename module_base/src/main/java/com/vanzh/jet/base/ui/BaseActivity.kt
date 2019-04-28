@@ -5,6 +5,7 @@ import android.support.annotation.LayoutRes
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.LinearLayout
+import com.alibaba.android.arouter.launcher.ARouter
 import com.vanzh.base.R
 import com.vanzh.jet.base.view.ActionViewLayout
 import com.vanzh.jet.base.view.visibility
@@ -20,7 +21,7 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(generateLayout())
-        this.title = "首页"
+        ARouter.getInstance().inject(this)
 
         if (showActionBar()) createActionBar()
 
@@ -29,6 +30,7 @@ abstract class BaseActivity : AppCompatActivity() {
         bindViewModel()
         init()
         initView()
+
     }
 
 
@@ -51,6 +53,10 @@ abstract class BaseActivity : AppCompatActivity() {
             finish()
         }
         toolBar.toolbarTitle.text = this.title
+    }
+
+    open fun setTitleBarTitle(title: String) {
+        toolBar.toolbarTitle.text = title
     }
 
     var showToolBarBack: Boolean = true

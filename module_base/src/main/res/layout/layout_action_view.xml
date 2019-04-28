@@ -19,7 +19,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="64dp"
             android:layout_marginEnd="64dp"
-            android:ellipsize="marquee"
+            android:ellipsize="end"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:gravity="center"
